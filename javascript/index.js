@@ -1,5 +1,3 @@
-const Chronometer = require("./chronometer");
-
 const chronometer = new Chronometer();
 
 // get the buttons:
@@ -56,7 +54,7 @@ function setStopBtn() {
 
 function setSplitBtn() {
   btnRight.innerText = 'SPLIT';
-  btnRigth.className = 'btn split';
+  btnRight.className = 'btn split';
  
 }
 
@@ -75,7 +73,7 @@ btnLeftElement.addEventListener('click', () => {
   if(btnLeft.classList.contains('start')){
     setStopBtn();
     setSplitBtn();
-    chronometer.start(printTime);
+    chronometer.start();
   } else {
     setStartBtn();
     setResetBtn();

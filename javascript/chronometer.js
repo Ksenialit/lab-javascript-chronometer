@@ -1,14 +1,12 @@
 class Chronometer {
-  constructor(currentTime, intervalId) {
+  constructor() {
     this.currentTime = 0;
     this.intervalId = null;
     }
-  }
 
-  start(callback) {
+  start() {
       this.intervalId = setInterval (()=>{
         this.currentTime++;
-          callback ();
         }, 1000);
     }
 
@@ -29,7 +27,7 @@ class Chronometer {
     clearInterval(this.intervalId);
   }
 
-  reset(),{
+  reset() {
     this.currentTime = 0;
   }
 
@@ -39,8 +37,11 @@ class Chronometer {
     return `${minutes}:${seconds}`
   }
 
+}
+
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
 if (typeof module !== 'undefined') {
   module.exports = Chronometer;
 }
+
